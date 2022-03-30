@@ -14,8 +14,8 @@ import Home from './pages/Home'
 
 const App = () => {
   return (
-    <TemplateDefault>
-      <Router>
+    <Router>
+      <TemplateDefault>
         <Switch>
 
           <Route path="/customers">
@@ -27,8 +27,8 @@ const App = () => {
           </Route>
 
         </Switch>
-      </Router>
-    </TemplateDefault>
+      </TemplateDefault>
+    </Router>
   )
 }
 
