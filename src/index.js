@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom'
 
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 
+import { AuthProvider } from './state/auth'
+
 import App from './App'
 import './index.css'
 
@@ -18,9 +20,12 @@ const theme = createTheme({
 })
 
 ReactDOM.render(
+  
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <App />
+      <AuthProvider>
+        <App />
+      </AuthProvider>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')

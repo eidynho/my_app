@@ -22,7 +22,7 @@ import HomeIcon from '@mui/icons-material/Home'
 import useStyles from './Header.style'
 import { Router } from 'react-router-dom'
 
-const Header = () => {
+const Header = ( { user }) => {
   const classes = useStyles()
   const history = useHistory()
 
@@ -51,9 +51,13 @@ const Header = () => {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" component="div" className={classes.title}>
-              News
+              My App
             </Typography>
-            <Button color="inherit">Login</Button>
+            {
+              user.logged
+                ? <Typography variant="h6">{user.email}</Typography>
+                : <Button color="inherit">Login</Button>
+            }
           </Toolbar>
         </AppBar>
         

@@ -1,12 +1,15 @@
 import Container from '@mui/material/Container'
 
 import Header from '../partials/Header/Header'
+import useAuth from '../state/auth'
 
-const TemplateDefault = ({ children }) => {
+const Default = ({ children }) => {
+
+  const { user } = useAuth()
 
   return (
     <>
-      <Header />
+      <Header user={user} />
       <Container>
         {children}
       </Container>
@@ -14,4 +17,4 @@ const TemplateDefault = ({ children }) => {
   )
 }
 
-export default TemplateDefault
+export default Default
